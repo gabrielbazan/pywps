@@ -560,6 +560,9 @@ class Service(object):
 
     @Request.application
     def __call__(self, http_request):
+        return self.handle(http_request)
+
+    def handle(self, http_request):
 
         request_uuid = uuid.uuid1()
 
